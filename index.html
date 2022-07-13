@@ -29,8 +29,11 @@
 
             <h3 v-if="!tasks.length" class="text-center my-5">NO MORE TASKS TO DO FOR TODAY! ;)</h3>
             <ul v-else class="list-group my-3">
-                <li :class="{'text-decoration-line-through': task.done == true}" v-for="(task, index) in tasks" class="list-group-item d-flex justify-content-between" @click="toggleTask(task)" style="cursor:pointer">
-                    {{task.text}}
+                <li :class="{'text-decoration-line-through': task.done == true}" v-for="(task, index) in tasks" class="list-group-item d-flex justify-content-between">
+                    <div>
+                        <input @click="toggleTask(task)" type="checkbox" name="" id="">
+                        {{task.text}}
+                    </div>
                     <button @click="removeTask(index)" type="button" class="btn btn-close"></button>
                 </li>
             </ul>

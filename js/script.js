@@ -5,6 +5,7 @@ const root = new Vue({
     data: {
         name: 'ToDoList',
         newTask: '',
+        isChecked: true,
         tasks: [
             {text: 'Dare da mangiare al cane',
              done: false,
