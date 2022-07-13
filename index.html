@@ -23,7 +23,7 @@
         <!-- MAIN -->
         <main class="w-50 mx-auto">
             <div class="input-group mb-3">
-                <input v-model.trim="newTask" type="text" class="form-control" placeholder="Aggiungi un task">
+                <input v-model.trim="newTask" type="text" class="form-control" placeholder="Aggiungi un task" @keyup.enter="addTask">
                 <button @click="addTask" type="button" class="btn btn-primary"> ADD</button>
             </div>
 
