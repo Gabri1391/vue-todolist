@@ -31,8 +31,9 @@
 
             <h3 v-if="!tasks.length" class="text-center my-5">No more tasks to do for you! ;)</h3>
             <ul v-else class="list-group my-3">
-                <li :class="{'text-decoration-line-through': task.done == true}" v-for="task in tasks" class="list-group-item">
+                <li v-for="(task, index) in tasks" class="list-group-item d-flex justify-content-between">
                     {{task.text}}
+                    <button @click="removeTask(index)" type="button" class="btn btn-close"></button>
                 </li>
             </ul>
 
