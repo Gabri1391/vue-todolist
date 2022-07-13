@@ -7,7 +7,7 @@ const root = new Vue({
         newTask: '',
         tasks: [
             {text: 'Dare da mangiare al cane',
-             done: true,
+             done: false,
             },
 
             {text: 'Fare aggiornamento a Windows',
@@ -15,7 +15,7 @@ const root = new Vue({
             },
 
             {text: 'Fare la spesa',
-             done: true,
+             done: false,
             },
 
             {text: 'Collegarsi su Zoom per il meeting aziendale',
@@ -23,7 +23,7 @@ const root = new Vue({
             },
 
             {text: 'Portare fuori la spazzatura',
-             done: true,
+             done: false,
             }
         ]
     },
@@ -36,6 +36,10 @@ const root = new Vue({
         addTask(){
             this.tasks.push({text : this.newTask});
             this.newTask = '';
+        },
+
+        toggleTask(task){
+            task.done = !task.done
         }
     }
 });
