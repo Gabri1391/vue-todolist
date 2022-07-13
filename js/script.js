@@ -3,9 +3,8 @@ Vue.config.devtools = true;
 const root = new Vue({
     el: '#root',
     data: {
-        name: 'ToDoList',
+        name: 'todolist',
         newTask: '',
-        isChecked: true,
         tasks: [
             {text: 'Dare da mangiare al cane',
              done: false,
@@ -35,12 +34,13 @@ const root = new Vue({
         },
 
         addTask(){
-            this.tasks.push({text : this.newTask});
+            this.tasks.push({text : this.newTask, done: false});
             this.newTask = '';
         },
 
         toggleTask(task){
-            task.done = !task.done
+            task.done = !task.done 
+            newTask.done = !newTask.done
         }
     }
 });
