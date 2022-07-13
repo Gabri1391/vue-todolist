@@ -19,6 +19,24 @@
 </head>
 <body>
     <div class="container" id="root">
+        <!-- HEADER -->
+        <header class="text-center my-3 fw-bold display-3">TO DO LIST</header>
+
+        <!-- MAIN -->
+        <main class="w-50 mx-auto">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Aggiungi un task">
+                <button type="button" class="btn btn-primary"> ADD</button>
+            </div>
+
+            <h3 v-if="!tasks.length" class="text-center my-5">No more tasks to do for you! ;)</h3>
+            <ul v-else class="list-group my-3">
+                <li :class="{'text-decoration-line-through': task.done == true}" v-for="task in tasks" class="list-group-item">
+                    {{task.text}}
+                </li>
+            </ul>
+
+        </main>
 
     </div>
     <script src="js/script.js"></script>
