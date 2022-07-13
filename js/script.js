@@ -3,6 +3,8 @@ Vue.config.devtools = true;
 const root = new Vue({
     el: '#root',
     data: {
+        name: 'ToDoList',
+        newTask: '',
         tasks: [
             {text: 'Dare da mangiare al cane',
              done: true,
@@ -29,6 +31,11 @@ const root = new Vue({
     methods: {
         removeTask(i){
             this.tasks.splice(i, 1);
+        },
+
+        addTask(){
+            this.tasks.push({text : this.newTask});
+            this.newTask = '';
         }
     }
 });
